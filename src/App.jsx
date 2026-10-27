@@ -1,29 +1,30 @@
-import { useState, useEffect, useMemo } from 'react';
-import {
-  Play,
-  ShoppingBag,
-  Search,
-  X,
-  ChevronRight,
-  ChevronLeft,
-  Plus,
-  Minus,
-  Trash2,
+import React, { useState, useEffect, useMemo } from 'react';
+import { 
+  Play, 
+  ShoppingBag, 
+  Search, 
+  X, 
+  ChevronRight, 
+  ChevronLeft, 
+  Plus, 
+  Minus, 
+  Trash2, 
   ArrowUpRight,
   CheckCircle,
   Cake,
   Clapperboard,
   Sparkles,
   Ticket,
-  Heart,
+  Heart
 } from 'lucide-react';
 
 // --- BONTIS CINEMA LOGO (CONTI'S BAKESHOP INSPIRED EMBLEM) ---
-function BontisLogo({ className = 'h-12' }) {
+function BontisLogo({ className = "h-12" }) {
   return (
     <div className={`flex items-center gap-3 select-none ${className}`}>
-      <svg
-        viewBox="0 0 200 130"
+      {/* Oval Crest Icon in Conti's Green & White with Gold Trim */}
+      <svg 
+        viewBox="0 0 200 130" 
         className="h-full w-auto drop-shadow-[0_2px_10px_rgba(0,106,78,0.4)]"
       >
         <defs>
@@ -38,27 +39,23 @@ function BontisLogo({ className = 'h-12' }) {
           </linearGradient>
         </defs>
 
+        {/* Outer Gold Ring */}
         <ellipse cx="100" cy="65" rx="95" ry="60" fill="url(#goldBorder)" />
-        <ellipse
-          cx="100"
-          cy="65"
-          rx="90"
-          ry="55"
-          fill="url(#emeraldGrad)"
-          stroke="#FFFFFF"
-          strokeWidth="3"
-        />
+        {/* Inner Emerald Oval */}
+        <ellipse cx="100" cy="65" rx="90" ry="55" fill="url(#emeraldGrad)" stroke="#FFFFFF" strokeWidth="3" />
+        {/* Decorative Scallop Dots */}
         <circle cx="20" cy="65" r="2.5" fill="#F5D061" />
         <circle cx="180" cy="65" r="2.5" fill="#F5D061" />
 
-        <text
-          x="100"
-          y="72"
-          textAnchor="middle"
-          fill="#FFFFFF"
-          fontFamily="Georgia, 'Times New Roman', serif"
-          fontStyle="italic"
-          fontWeight="bold"
+        {/* Cursive "Bontis" Script */}
+        <text 
+          x="100" 
+          y="72" 
+          textAnchor="middle" 
+          fill="#FFFFFF" 
+          fontFamily="Georgia, 'Times New Roman', serif" 
+          fontStyle="italic" 
+          fontWeight="bold" 
           fontSize="46"
           letterSpacing="-1"
           style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.6)' }}
@@ -66,16 +63,12 @@ function BontisLogo({ className = 'h-12' }) {
           Bontis
         </text>
 
-        <path
-          d="M 45 80 Q 100 95 155 80"
-          stroke="#F5D061"
-          strokeWidth="2.5"
-          fill="none"
-          strokeLinecap="round"
-        />
+        {/* Decorative Ribbon/Line under Script */}
+        <path d="M 45 80 Q 100 95 155 80" stroke="#F5D061" strokeWidth="2.5" fill="none" strokeLinecap="round" />
         <polygon points="100,89 95,95 105,95" fill="#F5D061" />
       </svg>
 
+      {/* Typography side */}
       <div className="flex flex-col">
         <span className="font-serif italic font-extrabold text-2xl sm:text-3xl text-emerald-400 leading-none tracking-tight">
           Bontis
@@ -88,9 +81,46 @@ function BontisLogo({ className = 'h-12' }) {
   );
 }
 
+// --- MOCK DATA FOR BONTIS FILMS ---
 const FILMS_DATA = [
   {
     id: 'bf1',
+    title: 'CHIIKAWA THE MOVIE: THE SECRET OF MERMAID ISLAND',
+    director: 'Nagano, Tomohiro Kawamura',
+    year: '2025',
+    genre: 'Anime / Fantasy / Horror-Comedy',
+    rating: 'PG',
+    runtime: '1h 42m',
+    featured: true,
+    tagline: 'Deep beneath the turquoise waves lies a sweet and terrifying secret.',
+    synopsis: 'Chiikawa, Hachiware, and Usagi embark on a tropical expedition to a mysterious island in search of a legendary mermaid cake recipe, only to uncover dark culinary horrors and ancient sea guardians lurking in the shadows.',
+    cast: ['Yuka Shinto', 'Makoto Tanaka', 'Ari Ozawa'],
+    poster: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80',
+    banner: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80',
+    trailerUrl: 'https://www.youtube.com/embed/wxN1T1uxQ2g?autoplay=1',
+    accolades: 'Official Selection - Tokyo Anime Film Festival',
+    merchIds: ['bm1', 'bm5']
+  },
+  {
+    id: 'bf2',
+    title: 'ETERNITY',
+    director: 'David Freyne',
+    year: '2025',
+    genre: 'Romance / Sci-Fi / Drama',
+    rating: 'PG-13',
+    runtime: '1h 58m',
+    featured: true,
+    tagline: 'When forever is a choice, which age will you spend in paradise?',
+    synopsis: 'In an ethereal afterlife where everyone must choose a single age to spend for eternity, two soulmates face an impossible decision: remain forever in their youth or choose to age together through endless lifetimes.',
+    cast: ['Elizabeth Olsen', 'Miles Teller', 'Callum Turner'],
+    poster: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80',
+    banner: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1600&q=80',
+    trailerUrl: 'https://www.youtube.com/embed/V6wWKNij_fc?autoplay=1',
+    accolades: 'A24 & Bontis Studio Premiere Co-Production',
+    merchIds: ['bm2', 'bm4']
+  },
+  {
+    id: 'bf3',
     title: 'MANGO BRAVO: THE MULTIVERSE OF SWEETNESS',
     director: 'Daniel Kwan, Daniel Scheinert',
     year: '2025',
@@ -99,16 +129,13 @@ const FILMS_DATA = [
     runtime: '2h 19m',
     featured: true,
     tagline: 'Layer upon layer of parallel dimensions and crunchy meringue.',
-    synopsis:
-      'An overworked matriarch running a historic Manila bakery is swept into a chaotic multiversal war where weaponized pastries, hot-dog fingers, and emotional reconciliation collide.',
+    synopsis: 'An overworked matriarch running a historic Manila bakery is swept into a chaotic multiversal war where weaponized pastries, hot-dog fingers, and emotional reconciliation collide.',
     cast: ['Michelle Yeoh', 'Dolly de Leon', 'Ke Huy Quan', 'Eugene Domingo'],
-    poster:
-      'https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=800&q=80',
-    banner:
-      'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1600&q=80',
+    poster: 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=800&q=80',
+    banner: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1600&q=80',
     trailerUrl: 'https://www.youtube.com/embed/wxN1T1uxQ2g?autoplay=1',
     accolades: 'Bontis Choice Award & 7 Academy Awards® Winner',
-    merchIds: ['bm1', 'bm5'],
+    merchIds: ['bm1', 'bm5']
   },
   {
     id: 'bf2',
@@ -120,16 +147,13 @@ const FILMS_DATA = [
     runtime: '2h 07m',
     featured: true,
     tagline: 'Every secret family dessert hides a dark curse.',
-    synopsis:
-      'Following the mysterious demise of their grandmother—a legendary pastry chef—a family discovers an unholy ancestral pact written into ancient handwritten cookbook margins.',
+    synopsis: 'Following the mysterious demise of their grandmother—a legendary pastry chef—a family discovers an unholy ancestral pact written into ancient handwritten cookbook margins.',
     cast: ['Toni Collette', 'Alex Wolff', 'Milly Shapiro', 'Gabriel Byrne'],
-    poster:
-      'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80',
-    banner:
-      'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1600&q=80',
+    poster: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80',
+    banner: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1600&q=80',
     trailerUrl: 'https://www.youtube.com/embed/V6wWKNij_fc?autoplay=1',
     accolades: 'Sundance Film Festival Premiere Highlight',
-    merchIds: ['bm2', 'bm6'],
+    merchIds: ['bm2', 'bm6']
   },
   {
     id: 'bf3',
@@ -141,16 +165,13 @@ const FILMS_DATA = [
     runtime: '2h 27m',
     featured: true,
     tagline: 'Let the midsummer baking festival begin.',
-    synopsis:
-      'A grieving student joins her boyfriend in a secluded rural Swedish village for an ancestral summer soltice feast, unaware of the pagan ritual sacrifices baked into the bread.',
+    synopsis: 'A grieving student joins her boyfriend in a secluded rural Swedish village for an ancestral summer soltice feast, unaware of the pagan ritual sacrifices baked into the bread.',
     cast: ['Florence Pugh', 'Jack Reynor', 'William Jackson Harper'],
-    poster:
-      'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80',
-    banner:
-      'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1600&q=80',
+    poster: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80',
+    banner: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1600&q=80',
     trailerUrl: 'https://www.youtube.com/embed/1Vnghdsjmd0?autoplay=1',
     accolades: 'Best Original Cinematography Winner',
-    merchIds: ['bm3', 'bm4'],
+    merchIds: ['bm3', 'bm4']
   },
   {
     id: 'bf4',
@@ -162,16 +183,13 @@ const FILMS_DATA = [
     runtime: '2h 15m',
     featured: false,
     tagline: 'This is how I win.',
-    synopsis:
-      'A charismatic jewelry dealer and gambling addict makes a series of frantic, high-risk bets in Manila’s neon-lit underground while protecting a rare uncut gemstone.',
+    synopsis: 'A charismatic jewelry dealer and gambling addict makes a series of frantic, high-risk bets in Manila’s neon-lit underground while protecting a rare uncut gemstone.',
     cast: ['Adam Sandler', 'Julia Fox', 'Lakeith Stanfield'],
-    poster:
-      'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=800&q=80',
-    banner:
-      'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1600&q=80',
+    poster: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=800&q=80',
+    banner: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1600&q=80',
     trailerUrl: 'https://www.youtube.com/embed/vTfJp2Ts9X8?autoplay=1',
     accolades: 'National Board of Review Top 10 Selection',
-    merchIds: ['bm1'],
+    merchIds: ['bm1']
   },
   {
     id: 'bf5',
@@ -183,16 +201,13 @@ const FILMS_DATA = [
     runtime: '1h 49m',
     featured: false,
     tagline: 'There is enchantment in the light... and the pastry.',
-    synopsis:
-      'Two lonely lighthouse keepers on a stormy New England island spiral into obsession and madness while dining exclusively on salted fish and stale rum biscuits.',
+    synopsis: 'Two lonely lighthouse keepers on a stormy New England island spiral into obsession and madness while dining exclusively on salted fish and stale rum biscuits.',
     cast: ['Willem Dafoe', 'Robert Pattinson'],
-    poster:
-      'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
-    banner:
-      'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
+    poster: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
+    banner: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80',
     trailerUrl: 'https://www.youtube.com/embed/Hyag7lR8CPA?autoplay=1',
     accolades: 'Academy Award Nominee for Best Cinematography',
-    merchIds: ['bm6'],
+    merchIds: ['bm6']
   },
   {
     id: 'bf6',
@@ -204,19 +219,17 @@ const FILMS_DATA = [
     runtime: '1h 45m',
     featured: false,
     tagline: 'In-Yun connects us across oceans and time.',
-    synopsis:
-      'Two childhood sweethearts separated by emigration reunite two decades later in New York for one bittersweet week, sharing memories over slices of green tea cake.',
+    synopsis: 'Two childhood sweethearts separated by emigration reunite two decades later in New York for one bittersweet week, sharing memories over slices of green tea cake.',
     cast: ['Greta Lee', 'Teo Yoo', 'John Magaro'],
-    poster:
-      'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80',
-    banner:
-      'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80',
+    poster: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80',
+    banner: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1600&q=80',
     trailerUrl: 'https://www.youtube.com/embed/kA244xewHis?autoplay=1',
     accolades: 'Golden Globe Nominee Best Motion Picture',
-    merchIds: ['bm5'],
-  },
+    merchIds: ['bm5']
+  }
 ];
 
+// --- MERCH & PASTRY DATA ---
 const MERCH_DATA = [
   {
     id: 'bm1',
@@ -224,12 +237,10 @@ const MERCH_DATA = [
     film: 'MANGO BRAVO: MULTIVERSE',
     category: 'Merch & Accessories',
     price: 34,
-    image:
-      'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=600&q=80',
-    description:
-      'Heavyweight organic canvas tote with custom artwork merging 35mm film reels and fresh sliced mangoes. Emerald green lining.',
+    image: 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=600&q=80',
+    description: 'Heavyweight organic canvas tote with custom artwork merging 35mm film reels and fresh sliced mangoes. Emerald green lining.',
     stock: 'In Stock',
-    limited: true,
+    limited: true
   },
   {
     id: 'bm2',
@@ -237,12 +248,10 @@ const MERCH_DATA = [
     film: 'HEREDITARY RECIPE',
     category: 'Home & Collectibles',
     price: 29,
-    image:
-      'https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=600&q=80',
-    description:
-      'Scented soy candle infused with notes of toasted caramel, vanilla meringue, and dark hazelnut. Custom ceramic jar.',
+    image: 'https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=600&q=80',
+    description: 'Scented soy candle infused with notes of toasted caramel, vanilla meringue, and dark hazelnut. Custom ceramic jar.',
     stock: 'Low Stock',
-    limited: false,
+    limited: false
   },
   {
     id: 'bm3',
@@ -250,12 +259,10 @@ const MERCH_DATA = [
     film: 'MIDSOMMAR FEAST',
     category: 'Books & Screenplays',
     price: 58,
-    image:
-      'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80',
-    description:
-      'Gold-foil embossed hardbound screenplay containing production notes, set photography, and pastry recipes from the film set.',
+    image: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80',
+    description: 'Gold-foil embossed hardbound screenplay containing production notes, set photography, and pastry recipes from the film set.',
     stock: 'In Stock',
-    limited: true,
+    limited: true
   },
   {
     id: 'bm4',
@@ -263,12 +270,10 @@ const MERCH_DATA = [
     film: 'BONTIS STUDIO ORIGINALS',
     category: 'Apparel',
     price: 88,
-    image:
-      'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=600&q=80',
-    description:
-      'Ultra-heavy 450gsm fleece hoodie in signature Bontis deep forest green, featuring cursive embroidered chest crest.',
+    image: 'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=600&q=80',
+    description: 'Ultra-heavy 450gsm fleece hoodie in signature Bontis deep forest green, featuring cursive embroidered chest crest.',
     stock: 'In Stock',
-    limited: false,
+    limited: false
   },
   {
     id: 'bm5',
@@ -276,12 +281,10 @@ const MERCH_DATA = [
     film: 'PAST LIVES IN MANILA',
     category: 'Vinyl & Audio',
     price: 45,
-    image:
-      'https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=600&q=80',
-    description:
-      'Special 180g edition vinyl pressed in translucent green marble with gatefold photo art and composer notes.',
+    image: 'https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=600&q=80',
+    description: 'Special 180g edition vinyl pressed in translucent green marble with gatefold photo art and composer notes.',
     stock: 'In Stock',
-    limited: true,
+    limited: true
   },
   {
     id: 'bm6',
@@ -289,15 +292,14 @@ const MERCH_DATA = [
     film: 'THE LIGHTHOUSE KEEPER',
     category: 'Kitchenware',
     price: 32,
-    image:
-      'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80',
-    description:
-      'Stoneware mug with classic monochrome lighthouse engraving, paired with a collectible tin of butter sablé cookies.',
+    image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80',
+    description: 'Stoneware mug with classic monochrome lighthouse engraving, paired with a collectible tin of butter sablé cookies.',
     stock: 'In Stock',
-    limited: false,
-  },
+    limited: false
+  }
 ];
 
+// --- JOURNAL ARTICLES ---
 const JOURNAL_ARTICLES = [
   {
     id: 'bj1',
@@ -305,9 +307,8 @@ const JOURNAL_ARTICLES = [
     author: 'Chef & Film Critic Marco Cruz',
     date: 'OCTOBER 24, 2026',
     category: 'Behind The Lens',
-    snippet:
-      'How lighting designers captured the glossy texture of fresh fruit layers in 4K anamorphic resolution.',
-    readTime: '7 min read',
+    snippet: 'How lighting designers captured the glossy texture of fresh fruit layers in 4K anamorphic resolution.',
+    readTime: '7 min read'
   },
   {
     id: 'bj2',
@@ -315,9 +316,8 @@ const JOURNAL_ARTICLES = [
     author: 'Elena Santos',
     date: 'OCTOBER 10, 2026',
     category: 'Film & Food Analysis',
-    snippet:
-      'Exploring how Philippine bakery culture enhances intimate emotional storytelling in modern indie cinema.',
-    readTime: '9 min read',
+    snippet: 'Exploring how Philippine bakery culture enhances intimate emotional storytelling in modern indie cinema.',
+    readTime: '9 min read'
   },
   {
     id: 'bj3',
@@ -325,30 +325,34 @@ const JOURNAL_ARTICLES = [
     author: 'Bontis Editorial Team',
     date: 'SEPTEMBER 18, 2026',
     category: 'Director Interviews',
-    snippet:
-      'An exclusive conversation on tension building, eerie silence, and symbolist confectionery in Hereditary Recipe.',
-    readTime: '12 min read',
-  },
+    snippet: 'An exclusive conversation on tension building, eerie silence, and symbolist confectionery in Hereditary Recipe.',
+    readTime: '12 min read'
+  }
 ];
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState('ALL');
+  // Navigation & Filtering
+  const [activeTab, setActiveTab] = useState('ALL'); // ALL, FILMS, SHOP, JOURNAL
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedGenre, setSelectedGenre] = useState('ALL');
 
-  const featuredFilms = useMemo(() => FILMS_DATA.filter((f) => f.featured), []);
+  // Hero Carousel logic
+  const featuredFilms = useMemo(() => FILMS_DATA.filter(f => f.featured), []);
   const [heroIndex, setHeroIndex] = useState(0);
 
+  // Modals & Drawers
   const [selectedFilm, setSelectedFilm] = useState(null);
   const [activeTrailerUrl, setActiveTrailerUrl] = useState(null);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [checkoutSuccess, setCheckoutSuccess] = useState(false);
 
+  // Cart State
   const [cartItems, setCartItems] = useState([
     { ...MERCH_DATA[0], quantity: 1 },
-    { ...MERCH_DATA[3], quantity: 1 },
+    { ...MERCH_DATA[3], quantity: 1 }
   ]);
 
+  // Auto Hero Slider
   useEffect(() => {
     if (activeTrailerUrl || selectedFilm) return;
     const interval = setInterval(() => {
@@ -357,13 +361,12 @@ export default function App() {
     return () => clearInterval(interval);
   }, [featuredFilms.length, activeTrailerUrl, selectedFilm]);
 
+  // Cart Actions
   const addToCart = (product) => {
-    setCartItems((prev) => {
-      const existing = prev.find((item) => item.id === product.id);
+    setCartItems(prev => {
+      const existing = prev.find(item => item.id === product.id);
       if (existing) {
-        return prev.map((item) =>
-          item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item,
-        );
+        return prev.map(item => item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item);
       }
       return [...prev, { ...product, quantity: 1 }];
     });
@@ -371,48 +374,39 @@ export default function App() {
   };
 
   const updateQuantity = (id, delta) => {
-    setCartItems((prev) =>
-      prev
-        .map((item) => {
-          if (item.id === id) {
-            const newQty = item.quantity + delta;
-            return newQty > 0 ? { ...item, quantity: newQty } : null;
-          }
-          return item;
-        })
-        .filter(Boolean),
-    );
+    setCartItems(prev => prev.map(item => {
+      if (item.id === id) {
+        const newQty = item.quantity + delta;
+        return newQty > 0 ? { ...item, quantity: newQty } : null;
+      }
+      return item;
+    }).filter(Boolean));
   };
 
-  const cartTotal = useMemo(
-    () => cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0),
-    [cartItems],
-  );
+  const cartTotal = useMemo(() => {
+    return cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+  }, [cartItems]);
 
-  const totalCartCount = useMemo(
-    () => cartItems.reduce((sum, item) => sum + item.quantity, 0),
-    [cartItems],
-  );
+  const totalCartCount = useMemo(() => {
+    return cartItems.reduce((sum, item) => sum + item.quantity, 0);
+  }, [cartItems]);
 
+  // Filter Logic
   const filteredFilms = useMemo(() => {
-    return FILMS_DATA.filter((film) => {
-      const matchesSearch =
-        film.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        film.director.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        film.genre.toLowerCase().includes(searchQuery.toLowerCase());
-      const matchesGenre =
-        selectedGenre === 'ALL' || film.genre.toLowerCase().includes(selectedGenre.toLowerCase());
+    return FILMS_DATA.filter(film => {
+      const matchesSearch = film.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                            film.director.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                            film.genre.toLowerCase().includes(searchQuery.toLowerCase());
+      const matchesGenre = selectedGenre === 'ALL' || film.genre.toLowerCase().includes(selectedGenre.toLowerCase());
       return matchesSearch && matchesGenre;
     });
   }, [searchQuery, selectedGenre]);
 
   const filteredMerch = useMemo(() => {
-    return MERCH_DATA.filter((item) => {
-      return (
-        item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.film.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.category.toLowerCase().includes(searchQuery.toLowerCase())
-      );
+    return MERCH_DATA.filter(item => {
+      return item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+             item.film.toLowerCase().includes(searchQuery.toLowerCase()) ||
+             item.category.toLowerCase().includes(searchQuery.toLowerCase());
     });
   }, [searchQuery]);
 
@@ -420,43 +414,43 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#070c0a] text-stone-100 font-sans selection:bg-[#006A4E] selection:text-white antialiased">
+      
+      {/* --- TOP BRAND ANNOUNCEMENT BAR --- */}
       <div className="bg-[#003d2d] border-b border-[#005740] px-4 py-2 text-xs font-mono tracking-widest text-center uppercase flex justify-center items-center gap-3 text-amber-200">
         <span className="inline-block w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
         <span>BONTIS CINEMA & BAKERY — EXCLUSIVE SCREENINGS & PASTRY MERCH</span>
         <span className="hidden sm:inline text-[#006A4E]">|</span>
-        <button
-          onClick={() => {
-            setActiveTab('SHOP');
-          }}
+        <button 
+          onClick={() => { setActiveTab('SHOP'); }}
           className="underline hover:text-white transition-colors uppercase hidden sm:inline"
         >
           Browse Limited Bakery Drops
         </button>
       </div>
 
+      {/* --- HEADER / NAVIGATION WITH CONTI'S EMBLEM --- */}
       <header className="sticky top-0 z-40 bg-[#070c0a]/95 backdrop-blur-md border-b border-[#004e39]/60 shadow-xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between gap-4">
+          
+          {/* Brand Logo Header */}
           <div className="flex items-center gap-10">
-            <button
-              onClick={() => {
-                setActiveTab('ALL');
-                setSearchQuery('');
-              }}
+            <button 
+              onClick={() => { setActiveTab('ALL'); setSearchQuery(''); }} 
               className="text-left group focus:outline-none flex items-center"
             >
               <BontisLogo className="h-14 sm:h-16" />
             </button>
 
+            {/* Navigation Bar */}
             <nav className="hidden md:flex items-center space-x-7 text-xs font-mono tracking-widest uppercase">
               {['ALL', 'FILMS', 'SHOP', 'JOURNAL'].map((tab) => (
                 <button
                   key={tab}
-                  onClick={() => {
-                    setActiveTab(tab);
-                    setSelectedGenre('ALL');
-                  }}
+                  onClick={() => { setActiveTab(tab); setSelectedGenre('ALL'); }}
                   className={`relative py-2 transition-all ${
-                    activeTab === tab ? 'text-amber-300 font-bold' : 'text-stone-400 hover:text-emerald-300'
+                    activeTab === tab 
+                      ? 'text-amber-300 font-bold' 
+                      : 'text-stone-400 hover:text-emerald-300'
                   }`}
                 >
                   {tab}
@@ -468,7 +462,9 @@ export default function App() {
             </nav>
           </div>
 
+          {/* Search & Actions */}
           <div className="flex items-center gap-3 sm:gap-5">
+            {/* Search Input Bar */}
             <div className="relative flex items-center">
               <Search className="w-4 h-4 absolute left-3 text-emerald-500 pointer-events-none" />
               <input
@@ -479,7 +475,7 @@ export default function App() {
                 className="w-36 sm:w-64 bg-[#0d1613] border border-[#005740] focus:border-emerald-400 rounded-none pl-9 pr-8 py-2 text-xs font-mono text-stone-100 placeholder-stone-500 focus:outline-none transition-all"
               />
               {searchQuery && (
-                <button
+                <button 
                   onClick={() => setSearchQuery('')}
                   className="absolute right-2 text-stone-400 hover:text-white"
                 >
@@ -488,6 +484,7 @@ export default function App() {
               )}
             </div>
 
+            {/* Shopping Cart Trigger */}
             <button
               onClick={() => setIsCartOpen(true)}
               className="relative p-3 bg-[#004e39] border border-emerald-600/60 hover:bg-[#006A4E] transition-all text-white shadow-md flex items-center justify-center group"
@@ -503,19 +500,13 @@ export default function App() {
           </div>
         </div>
 
+        {/* Mobile Navigation */}
         <div className="md:hidden flex items-center justify-around border-t border-[#004e39]/60 py-2.5 bg-[#09120e] px-2 text-[11px] font-mono uppercase tracking-wider">
           {['ALL', 'FILMS', 'SHOP', 'JOURNAL'].map((tab) => (
             <button
               key={tab}
-              onClick={() => {
-                setActiveTab(tab);
-                setSelectedGenre('ALL');
-              }}
-              className={`px-3 py-1 ${
-                activeTab === tab
-                  ? 'bg-[#006A4E] text-amber-200 font-bold border border-emerald-500'
-                  : 'text-stone-400'
-              }`}
+              onClick={() => { setActiveTab(tab); setSelectedGenre('ALL'); }}
+              className={`px-3 py-1 ${activeTab === tab ? 'bg-[#006A4E] text-amber-200 font-bold border border-emerald-500' : 'text-stone-400'}`}
             >
               {tab}
             </button>
@@ -523,20 +514,24 @@ export default function App() {
         </div>
       </header>
 
+      {/* --- HERO CAROUSEL SECTION --- */}
       {activeTab === 'ALL' && !searchQuery && (
         <section className="relative w-full h-[70vh] sm:h-[80vh] min-h-[520px] bg-[#070c0a] overflow-hidden border-b border-[#004e39]">
+          {/* Background Image Banner */}
           <div className="absolute inset-0 transition-opacity duration-1000">
-            <img
-              src={activeHero.banner}
-              alt={activeHero.title}
+            <img 
+              src={activeHero.banner} 
+              alt={activeHero.title} 
               className="w-full h-full object-cover object-center opacity-30 scale-105 filter brightness-90 contrast-125"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#070c0a] via-[#070c0a]/60 to-transparent"></div>
             <div className="absolute inset-0 bg-gradient-to-r from-[#070c0a] via-transparent to-[#070c0a]/50"></div>
           </div>
 
+          {/* Hero Content Overlay */}
           <div className="relative max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8 flex flex-col justify-end pb-16 sm:pb-20">
             <div className="max-w-3xl space-y-4">
+              
               <div className="flex flex-wrap items-center gap-2 font-mono text-xs tracking-widest text-emerald-300">
                 <span className="px-2.5 py-0.5 bg-[#004e39] text-amber-200 border border-emerald-500 font-bold uppercase">
                   BONTIS PREMIERE
@@ -547,6 +542,7 @@ export default function App() {
                 <span>{activeHero.year}</span>
               </div>
 
+              {/* Title with Serif/Cursive Aesthetic */}
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif italic font-extrabold tracking-tight text-white uppercase leading-none text-shadow">
                 {activeHero.title}
               </h1>
@@ -556,10 +552,10 @@ export default function App() {
               </p>
 
               <p className="text-xs sm:text-sm text-stone-300 font-sans font-light line-clamp-2 max-w-2xl leading-relaxed">
-                Directed by <span className="text-emerald-300 font-semibold">{activeHero.director}</span>.{' '}
-                {activeHero.synopsis}
+                Directed by <span className="text-emerald-300 font-semibold">{activeHero.director}</span>. {activeHero.synopsis}
               </p>
 
+              {/* Hero Action Buttons */}
               <div className="flex flex-wrap items-center gap-4 pt-4">
                 <button
                   onClick={() => setActiveTrailerUrl(activeHero.trailerUrl)}
@@ -576,16 +572,16 @@ export default function App() {
                   View Details
                 </button>
               </div>
+
             </div>
 
+            {/* Carousel Controls */}
             <div className="absolute bottom-6 right-4 sm:right-8 flex items-center gap-3">
               <span className="text-xs font-mono text-emerald-400 mr-2">
                 0{heroIndex + 1} / 0{featuredFilms.length}
               </span>
               <button
-                onClick={() =>
-                  setHeroIndex((prev) => (prev - 1 + featuredFilms.length) % featuredFilms.length)
-                }
+                onClick={() => setHeroIndex((prev) => (prev - 1 + featuredFilms.length) % featuredFilms.length)}
                 className="p-2.5 bg-[#0d1613] border border-[#005740] text-stone-300 hover:text-white hover:border-emerald-400 transition-all"
                 aria-label="Previous Slide"
               >
@@ -603,9 +599,13 @@ export default function App() {
         </section>
       )}
 
+      {/* --- MAIN CONTENT SECTION --- */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 space-y-16">
+
+        {/* --- FILMS GALLERY SECTION --- */}
         {(activeTab === 'ALL' || activeTab === 'FILMS') && (
           <section className="space-y-8">
+            {/* Header & Category Filters */}
             <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b border-[#004e39] pb-4 gap-4">
               <div>
                 <span className="text-xs font-mono tracking-widest text-emerald-400 uppercase block mb-1">
@@ -617,6 +617,7 @@ export default function App() {
                 </h2>
               </div>
 
+              {/* Genre Pills */}
               <div className="flex flex-wrap items-center gap-2 text-xs font-mono">
                 {['ALL', 'Sci-Fi', 'Horror', 'Drama', 'Thriller'].map((genre) => (
                   <button
@@ -634,18 +635,20 @@ export default function App() {
               </div>
             </div>
 
+            {/* Films Grid */}
             {filteredFilms.length > 0 ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {filteredFilms.map((film) => (
-                  <div
+                  <div 
                     key={film.id}
                     className="group bg-[#0d1613] border border-[#004e39] hover:border-emerald-400 transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-pointer shadow-lg"
                     onClick={() => setSelectedFilm(film)}
                   >
+                    {/* Film Poster Box */}
                     <div className="relative aspect-[2/3] overflow-hidden bg-stone-900">
-                      <img
-                        src={film.poster}
-                        alt={film.title}
+                      <img 
+                        src={film.poster} 
+                        alt={film.title} 
                         className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 filter grayscale-[15%] group-hover:grayscale-0"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-5">
@@ -659,6 +662,7 @@ export default function App() {
                       </div>
                     </div>
 
+                    {/* Metadata */}
                     <div className="p-5 space-y-3 flex-grow flex flex-col justify-between border-t border-[#004e39]">
                       <div>
                         <div className="text-[10px] font-mono tracking-widest text-emerald-400 uppercase mb-1">
@@ -685,8 +689,10 @@ export default function App() {
           </section>
         )}
 
+        {/* --- SHOP / MERCH & PASTRY SECTION --- */}
         {(activeTab === 'ALL' || activeTab === 'SHOP') && (
           <section className="space-y-8 pt-6">
+            {/* Header */}
             <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b border-[#004e39] pb-4 gap-4">
               <div>
                 <span className="text-xs font-mono tracking-widest text-emerald-400 uppercase block mb-1">
@@ -702,17 +708,18 @@ export default function App() {
               </p>
             </div>
 
+            {/* Merch Grid */}
             {filteredMerch.length > 0 ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {filteredMerch.map((item) => (
-                  <div
+                  <div 
                     key={item.id}
                     className="group bg-[#0d1613] border border-[#004e39] hover:border-emerald-400 transition-all duration-300 flex flex-col justify-between shadow-lg"
                   >
                     <div className="relative aspect-square bg-stone-900 overflow-hidden">
-                      <img
-                        src={item.image}
-                        alt={item.title}
+                      <img 
+                        src={item.image} 
+                        alt={item.title} 
                         className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                       />
                       {item.limited && (
@@ -759,6 +766,7 @@ export default function App() {
           </section>
         )}
 
+        {/* --- JOURNAL SECTION --- */}
         {(activeTab === 'ALL' || activeTab === 'JOURNAL') && (
           <section className="space-y-8 pt-6">
             <div className="border-b border-[#004e39] pb-4">
@@ -772,7 +780,7 @@ export default function App() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {JOURNAL_ARTICLES.map((article) => (
-                <div
+                <div 
                   key={article.id}
                   className="bg-[#0d1613] border border-[#004e39] p-6 flex flex-col justify-between hover:border-emerald-400 transition-all group shadow-md"
                 >
@@ -800,12 +808,15 @@ export default function App() {
             </div>
           </section>
         )}
+
       </main>
 
+      {/* --- MOVIE DETAIL MODAL --- */}
       {selectedFilm && (
         <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
           <div className="relative bg-[#0d1613] border border-[#005740] max-w-4xl w-full my-8 overflow-hidden shadow-2xl">
-            <button
+            
+            <button 
               onClick={() => setSelectedFilm(null)}
               className="absolute top-4 right-4 z-10 p-2 bg-stone-950/80 border border-[#004e39] text-stone-300 hover:text-white transition-colors"
             >
@@ -813,16 +824,18 @@ export default function App() {
             </button>
 
             <div className="grid grid-cols-1 md:grid-cols-12">
+              
               <div className="md:col-span-5 bg-stone-900 relative">
-                <img
-                  src={selectedFilm.poster}
-                  alt={selectedFilm.title}
+                <img 
+                  src={selectedFilm.poster} 
+                  alt={selectedFilm.title} 
                   className="w-full h-full object-cover min-h-[380px]"
                 />
               </div>
 
               <div className="md:col-span-7 p-6 sm:p-8 space-y-6 flex flex-col justify-between">
                 <div className="space-y-4">
+                  
                   <div className="flex flex-wrap items-center gap-2 font-mono text-xs text-emerald-400">
                     <span className="px-2 py-0.5 bg-[#004e39] text-amber-200">{selectedFilm.rating}</span>
                     <span>•</span>
@@ -874,12 +887,14 @@ export default function App() {
                     Close
                   </button>
                 </div>
+
               </div>
             </div>
           </div>
         </div>
       )}
 
+      {/* --- TRAILER VIDEO PLAYER MODAL --- */}
       {activeTrailerUrl && (
         <div className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4">
           <div className="relative w-full max-w-5xl aspect-video bg-black border border-[#004e39] shadow-2xl">
@@ -900,15 +915,17 @@ export default function App() {
         </div>
       )}
 
+      {/* --- SHOPPING CART DRAWER --- */}
       {isCartOpen && (
         <div className="fixed inset-0 z-50 overflow-hidden">
-          <div
+          <div 
             onClick={() => setIsCartOpen(false)}
             className="absolute inset-0 bg-black/75 backdrop-blur-sm transition-opacity"
           ></div>
 
           <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
             <div className="w-screen max-w-md bg-[#09120e] border-l border-[#005740] p-6 flex flex-col justify-between shadow-2xl">
+              
               <div className="space-y-4">
                 <div className="flex items-center justify-between border-b border-[#004e39] pb-4">
                   <div className="flex items-center gap-2.5">
@@ -917,7 +934,7 @@ export default function App() {
                       YOUR BONTIS BAG ({totalCartCount})
                     </h2>
                   </div>
-                  <button
+                  <button 
                     onClick={() => setIsCartOpen(false)}
                     className="p-1 text-stone-400 hover:text-white"
                   >
@@ -925,13 +942,14 @@ export default function App() {
                   </button>
                 </div>
 
+                {/* Items */}
                 <div className="space-y-4 max-h-[60vh] overflow-y-auto pr-1">
                   {cartItems.length > 0 ? (
                     cartItems.map((item) => (
                       <div key={item.id} className="flex gap-4 p-3 bg-[#0d1613] border border-[#004e39]">
-                        <img
-                          src={item.image}
-                          alt={item.title}
+                        <img 
+                          src={item.image} 
+                          alt={item.title} 
                           className="w-20 h-20 object-cover bg-stone-900 flex-shrink-0"
                         />
                         <div className="flex-grow space-y-1 flex flex-col justify-between">
@@ -939,19 +957,23 @@ export default function App() {
                             <h4 className="text-xs font-serif italic font-bold text-white uppercase leading-tight">
                               {item.title}
                             </h4>
-                            <p className="text-[10px] font-mono text-amber-200">${item.price}.00</p>
+                            <p className="text-[10px] font-mono text-amber-200">
+                              ${item.price}.00
+                            </p>
                           </div>
 
                           <div className="flex items-center justify-between pt-2">
                             <div className="flex items-center border border-[#004e39] bg-[#070c0a]">
-                              <button
+                              <button 
                                 onClick={() => updateQuantity(item.id, -1)}
                                 className="px-2 py-0.5 text-stone-400 hover:text-white"
                               >
                                 <Minus className="w-3 h-3" />
                               </button>
-                              <span className="px-2 text-xs font-mono text-white">{item.quantity}</span>
-                              <button
+                              <span className="px-2 text-xs font-mono text-white">
+                                {item.quantity}
+                              </span>
+                              <button 
                                 onClick={() => updateQuantity(item.id, 1)}
                                 className="px-2 py-0.5 text-stone-400 hover:text-white"
                               >
@@ -959,7 +981,7 @@ export default function App() {
                               </button>
                             </div>
 
-                            <button
+                            <button 
                               onClick={() => updateQuantity(item.id, -item.quantity)}
                               className="text-stone-500 hover:text-rose-400 transition-colors"
                             >
@@ -977,6 +999,7 @@ export default function App() {
                 </div>
               </div>
 
+              {/* Checkout */}
               <div className="border-t border-[#004e39] pt-4 space-y-4">
                 {checkoutSuccess ? (
                   <div className="p-4 bg-[#003d2d] border border-emerald-500 text-amber-200 font-mono text-xs text-center space-y-2">
@@ -1020,59 +1043,38 @@ export default function App() {
                   </>
                 )}
               </div>
+
             </div>
           </div>
         </div>
       )}
 
+      {/* --- FOOTER --- */}
       <footer className="bg-[#050907] border-t border-[#004e39] py-16 px-4 sm:px-6 lg:px-8 font-mono text-xs text-stone-400">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+          
           <div className="space-y-4">
             <BontisLogo className="h-12" />
             <p className="text-stone-500 text-[11px] font-sans">
-              Bontis Cinema & Bakery is an independent film distribution studio blending cinematic art with iconic pastry culture.
+              Bontis Cinema & Bakery is an independent film distribution studio blending cinematic artistry with iconic pastry culture.
             </p>
           </div>
 
           <div className="space-y-2">
             <h4 className="text-amber-200 font-bold tracking-widest uppercase mb-3">NAVIGATION</h4>
             <ul className="space-y-2 text-stone-400">
-              <li>
-                <button onClick={() => setActiveTab('FILMS')} className="hover:text-white transition-colors">
-                  FILM CATALOG
-                </button>
-              </li>
-              <li>
-                <button onClick={() => setActiveTab('SHOP')} className="hover:text-white transition-colors">
-                  SHOP PASTRY MERCH
-                </button>
-              </li>
-              <li>
-                <button onClick={() => setActiveTab('JOURNAL')} className="hover:text-white transition-colors">
-                  THE JOURNAL
-                </button>
-              </li>
+              <li><button onClick={() => setActiveTab('FILMS')} className="hover:text-white transition-colors">FILM CATALOG</button></li>
+              <li><button onClick={() => setActiveTab('SHOP')} className="hover:text-white transition-colors">SHOP PASTRY MERCH</button></li>
+              <li><button onClick={() => setActiveTab('JOURNAL')} className="hover:text-white transition-colors">THE JOURNAL</button></li>
             </ul>
           </div>
 
           <div className="space-y-2">
             <h4 className="text-amber-200 font-bold tracking-widest uppercase mb-3">DIRECTORY & LEGAL</h4>
             <ul className="space-y-2 text-stone-400">
-              <li>
-                <a href="#privacy" className="hover:text-white transition-colors">
-                  PRIVACY & COOKIES
-                </a>
-              </li>
-              <li>
-                <a href="#terms" className="hover:text-white transition-colors">
-                  TERMS & CONDITIONS
-                </a>
-              </li>
-              <li>
-                <a href="#press" className="hover:text-white transition-colors">
-                  PRESS INQUIRIES
-                </a>
-              </li>
+              <li><a href="#privacy" className="hover:text-white transition-colors">PRIVACY & COOKIES</a></li>
+              <li><a href="#terms" className="hover:text-white transition-colors">TERMS & CONDITIONS</a></li>
+              <li><a href="#press" className="hover:text-white transition-colors">PRESS INQUIRIES</a></li>
             </ul>
           </div>
 
@@ -1082,9 +1084,9 @@ export default function App() {
               Subscribe for exclusive ticket drops, film screenings, and limited bakery merch releases.
             </p>
             <div className="flex">
-              <input
-                type="email"
-                placeholder="YOUR EMAIL"
+              <input 
+                type="email" 
+                placeholder="YOUR EMAIL" 
                 className="bg-[#0d1613] border border-[#004e39] px-3 py-2 text-xs text-white placeholder-stone-600 focus:outline-none w-full"
               />
               <button className="bg-[#006A4E] text-white px-4 font-bold hover:bg-emerald-500 transition-colors">
@@ -1092,6 +1094,7 @@ export default function App() {
               </button>
             </div>
           </div>
+
         </div>
 
         <div className="max-w-7xl mx-auto border-t border-[#003d2d] mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between text-stone-600 text-[10px]">
@@ -1099,6 +1102,7 @@ export default function App() {
           <p>INSPIRED BY A24 CINEMA & CONTI'S BAKESHOP PHILIPPINES BRANDING.</p>
         </div>
       </footer>
+
     </div>
   );
 }
