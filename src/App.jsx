@@ -93,7 +93,7 @@ const FILMS_DATA = [
     runtime: '1h 42m',
     featured: true,
     tagline: 'Happy Birthday Josh!',
-    synopsis: '',
+    synopsis: 'A short documentary film that relives the memories from the past and leads you back to the present.',
     cast: ['Joshua Roda', 'Margaret Fermin', 'Isla Ang', 'Harry Pascual', 'Noel Nebres'],
     poster: 'https://media.discordapp.net/attachments/805698030783299605/1564915340952207430/Pink_Cityscape_Buildings_Movie_Poster_1.png?ex=6ae3007c&is=6ae1aefc&hm=ab7087029d8ce6f94b5f89eb19aef4ed8ae6d7c08fd4eade582dc576999f5c8e&=&format=webp&quality=lossless&width=724&height=1024',
     banner: 'https://media.discordapp.net/attachments/805698030783299605/1564915340952207430/Pink_Cityscape_Buildings_Movie_Poster_1.png?ex=6ae3007c&is=6ae1aefc&hm=ab7087029d8ce6f94b5f89eb19aef4ed8ae6d7c08fd4eade582dc576999f5c8e&=&format=webp&quality=lossless&width=724&height=1024',
