@@ -214,7 +214,7 @@ const MERCH_DATA = [
     category: 'Home & Collectibles',
     price: 29,
     image: 'https://media.discordapp.net/attachments/805698030783299605/1564905712268869663/867630179_1462154639368578_7220710600999146258_n.png?ex=6ae2f784&is=6ae1a604&hm=4e39a3bee5d39f4b8c7239c710a11060191671e7a535ba3607db1304e8da39be&=&format=webp&quality=lossless&width=200&height=384',
-    description: 'Your perfect duo in any game.',
+    description: 'Settphel: Talks alot and muted.',
     stock: 'Low Stock',
     limited: false
   },
@@ -246,30 +246,39 @@ const MERCH_DATA = [
 const JOURNAL_ARTICLES = [
   {
     id: 'bj1',
-    title: 'SWEET REVOLUTION: THE CINEMATOGRAPHY OF MANGO BRAVO',
-    author: 'Chef & Film Critic Marco Cruz',
-    date: 'OCTOBER 24, 2026',
+    title: 'From Gru-Po to Bontis Bakeshop & Cinema: How Did The Company Marketed Their Successful Rebranding?',
+    author: 'Maggie',
+    date: 'OCTOBER 28, 2026',
     category: 'Behind The Lens',
-    snippet: 'How lighting designers captured the glossy texture of fresh fruit layers in 4K anamorphic resolution.',
+    snippet: 'How the minds think.',
     readTime: '7 min read'
   },
   {
     id: 'bj2',
-    title: 'THE IN-YUN OF PASTRY: DESSERTS AS NARRATIVE ANCHORS',
-    author: 'Elena Santos',
-    date: 'OCTOBER 10, 2026',
+    title: 'Bontis Bakeshop Fighting Against The Rise Of AI',
+    author: 'Harry',
+    date: 'OCTOBER 28, 2026',
     category: 'Film & Food Analysis',
-    snippet: 'Exploring how Philippine bakery culture enhances intimate emotional storytelling in modern indie cinema.',
+    snippet: 'In this modern world with the rise of technology, Bontis Bakeshop is fighting against the rise of AI in the industry.',
     readTime: '9 min read'
   },
   {
     id: 'bj3',
-    title: 'ARI ASTER ON CRAFTING FOLK HORROR WITH BAKERY TOTEMS',
-    author: 'Bontis Editorial Team',
-    date: 'SEPTEMBER 18, 2026',
+    title: 'THE RISE OF BONTIS ORIGINALS',
+    author: 'Kael',
+    date: 'OCTOBER 28, 2026',
     category: 'Director Interviews',
-    snippet: 'An exclusive conversation on tension building, eerie silence, and symbolist confectionery in Hereditary Recipe.',
+    snippet: 'An exclusive conversation on tension building, eerie silence, and symbolist confectionery in Bontis Bakeshop.',
     readTime: '12 min read'
+  },
+  {
+    id: 'bj4',
+    title: 'From Singing to Gaming: How is it Done Right?',
+    author: 'Noel',
+    date: 'OCTOBER 28, 2026',
+    category: 'Bontis Originals',
+    snippet: 'The creative journey of Bontis Studio\'s multi-talented artists and their transition from singing to gaming.',
+    readTime: '6 min read'
   }
 ];
 
