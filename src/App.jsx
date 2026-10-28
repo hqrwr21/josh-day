@@ -370,7 +370,7 @@ export default function App() {
       {/* --- TOP BRAND ANNOUNCEMENT BAR --- */}
       <div className="bg-[#003d2d] border-b border-[#005740] px-4 py-2 text-xs font-mono tracking-widest text-center uppercase flex justify-center items-center gap-3 text-amber-200">
         <span className="inline-block w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-        <span>BONTIS CINEMA & BAKERY — EXCLUSIVE SCREENINGS & PASTRY MERCH</span>
+        <span>BONTIS CINEMA & BAKERY — EXCLUSIVE SCREENINGS & PASTRY MADE FROM THE HEART -HARRY</span>
         <span className="hidden sm:inline text-[#006A4E]">|</span>
         <button 
           onClick={() => { setActiveTab('SHOP'); }}
