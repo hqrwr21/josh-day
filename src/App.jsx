@@ -213,7 +213,7 @@ const MERCH_DATA = [
     film: 'Marvel Rivals: The Duo',
     category: 'Home & Collectibles',
     price: 29,
-    image: 'https://media.discordapp.net/attachments/805698030783299605/1564905712268869663/867630179_1462154639368578_7220710600999146258_n.png?ex=6ae2f784&is=6ae1a604&hm=4e39a3bee5d39f4b8c7239c710a11060191671e7a535ba3607db1304e8da39be&=&format=webp&quality=lossless&width=200&height=384',
+    image: 'https://media.discordapp.net/attachments/805698030783299605/1564916233092988978/image.png?ex=6ae30150&is=6ae1afd0&hm=58c2c1f44d117a564f747c3b6f1547f6fed148ff9ee6453315c1f3fa093c0d63&=&format=webp&quality=lossless',
     description: 'Settphel: Talks alot and muted.',
     stock: 'Low Stock',
     limited: false
