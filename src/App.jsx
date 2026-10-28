@@ -309,7 +309,7 @@ export default function App() {
     if (activeTrailerUrl || selectedFilm) return;
     const interval = setInterval(() => {
       setHeroIndex((prev) => (prev + 1) % featuredFilms.length);
-    }, 7000);
+    }, 10000);
     return () => clearInterval(interval);
   }, [featuredFilms.length, activeTrailerUrl, selectedFilm]);
 
@@ -1050,7 +1050,7 @@ export default function App() {
         </div>
 
         <div className="max-w-7xl mx-auto border-t border-[#003d2d] mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between text-stone-600 text-[10px]">
-          <p>© {new Date().getFullYear()} BONTIS CINEMA & BAKERY INC. ALL RIGHTS RESERVED. DEPLOYABLE READY FOR VERCEL.</p>
+          <p>© {new Date().getFullYear()} BONTIS CINEMA & BAKERY INC. ALL RIGHTS RESERVED.</p>
           <p>INSPIRED BY A24 CINEMA & CONTI'S BAKESHOP PHILIPPINES BRANDING.</p>
         </div>
       </footer>
