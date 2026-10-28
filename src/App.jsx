@@ -115,7 +115,7 @@ const FILMS_DATA = [
     cast: ['Yuka Shinto', 'Makoto Tanaka', 'Ari Ozawa', 'Armor-san'],
     poster: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZciqha-SSybAXne3cfUHor4e08VQF2Dq-cG06dmlC2vsZOR9JEVoT50Y&s=10',
     banner: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZciqha-SSybAXne3cfUHor4e08VQF2Dq-cG06dmlC2vsZOR9JEVoT50Y&s=10',
-    trailerUrl: 'https://www.youtube.com/embed/wxN1T1uxQ2g?autoplay=1',
+    trailerUrl: 'https://www.youtube.com/embed/bqN9wLOsKdM?autoplay=1',
     accolades: 'Official Selection - Tokyo Anime Film Festival',
     merchIds: ['bm1', 'bm5']
   },
@@ -133,7 +133,7 @@ const FILMS_DATA = [
     cast: ['Elizabeth Olsen', 'Miles Teller', 'Callum Turner'],
     poster: 'https://m.media-amazon.com/images/M/MV5BNzlmZTNiOTAtNzhlOC00ZTA1LWJhNTgtMDQ4YmY4NWIyNTA4XkEyXkFqcGc@._V1_.jpg',
     banner: 'https://m.media-amazon.com/images/M/MV5BNzlmZTNiOTAtNzhlOC00ZTA1LWJhNTgtMDQ4YmY4NWIyNTA4XkEyXkFqcGc@._V1_.jpg',
-    trailerUrl: 'https://www.youtube.com/embed/V6wWKNij_fc?autoplay=1',
+    trailerUrl: 'https://www.youtube.com/embed/irXTps1REHU?autoplay=1',
     accolades: 'A24 & Bontis Studio Premiere Co-Production',
     merchIds: ['bm2', 'bm4']
   },
